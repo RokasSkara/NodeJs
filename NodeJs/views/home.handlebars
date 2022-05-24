@@ -15,3 +15,12 @@
         {{/if}}
     </div>
 </header>
+
+<main>
+    {{#each data}}
+        <div class="Blog">
+        <h4>{{this.title}}</h4>
+        <p>{{this.content}}</p>
+    </div>
+    {{/each}}
+</main>

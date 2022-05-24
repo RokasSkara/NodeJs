@@ -22,10 +22,19 @@
 </section>
 
 <main>
-
-
+    {{#each data}}
+    <div class="Blog">
+        <div class="InnerBlog">
+            <h4>{{this.title}}</h4>
+            <p>{{this.content}}</p>
+        </div>
+        <div class="InnerBlogDelete">
+            <button {{this.id}}>Delete</button>
+        </div>
+    </div>
+    {{/each}}
 </main>
 
 <footer>
-    
+
 </footer>

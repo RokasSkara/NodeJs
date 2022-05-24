@@ -11,7 +11,6 @@ import user from './routes/ui/user.js'
 import API from './routes/api/api.js'
 //
 
-
 const app = express()
 const PORT = process.env.UserPort || 3000
 
@@ -26,8 +25,7 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
-app.use(express.json(), express.urlencoded({extended: false}), cors(options), cookieParser(),express.static(path.resolve('public')))
-
+app.use(express.json(), express.urlencoded({ extended: false }), cors(options), cookieParser(), express.static(path.resolve('public')))
 
 //UI part
 app.use('/', homepage)
@@ -39,4 +37,4 @@ app.use('/api', API)
 
 app.listen(PORT, () => console.log(`Server live on port ${PORT}`));
 
-export {PORT}
+export { PORT }

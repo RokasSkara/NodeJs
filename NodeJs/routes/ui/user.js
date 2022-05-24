@@ -17,6 +17,7 @@ router.get('/', isAuth, async (req, res) => {
         res.render('users', {
             css: 'user.css',
             script: 'user.js',
+            data: data,
             user: user
         })
     } catch (err) {
