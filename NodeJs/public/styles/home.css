@@ -25,3 +25,13 @@ header ul{
 .Blog h4{
     margin: 0.3em 0;
 }
+
+#filters{
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.SortButton{
+    height: 50%;
+}

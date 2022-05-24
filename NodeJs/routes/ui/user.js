@@ -19,6 +19,7 @@ router.get('/', isAuth, async (req, res) => {
         //in case its empty 
         let empty = 'Press Add Blog button above to create one'
         data.length > 0 ? empty = false : '';
+        
         res.render('users', {
             css: 'user.css',
             script: 'user.js',

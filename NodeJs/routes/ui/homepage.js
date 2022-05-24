@@ -1,15 +1,18 @@
 import express from 'express'
 import { Auth } from '../../controllers/authorization.js'
 import con from '../../controllers/connector.js'
+import filters, { checkFilters } from '../../controllers/filters.js'
 
 const router = express.Router();
 
 router.get('/', async (req, res) => {
+    checkFilters(req.query)
     try {
         const [data] = await con.query(`
             SELECT *
             FROM blog
-         `)
+            ORDER BY ?? ${filters.order}
+         `,[filters.sortBy])
         //in case its empty 
         let empty = 'No blogs yet - Login and click on My Blogs to create one!'
         data.length > 0? empty = false : '';
@@ -21,7 +24,7 @@ router.get('/', async (req, res) => {
                 data: data,
                 Auth: true,
                 user: req.cookies.token.split(' ')[3],
-                empty: empty,
+                empty: empty
             })
         } else {
             res.status(200).render('home', {

@@ -1,18 +1,22 @@
-<header>
-    <div class="toggler">
+<header class="toggler">
+    <div>
+        <a href="/">Home</a>
+    </div>
+    <div>
         <button id="toggler">Click here to register</button>
+
     </div>
 </header>
 
 <main>
-<section id="Login">
+    <section id="Login">
         <h1>Login</h1>
 
         <form action="userManagement/login" method="POST">
             <label for="email">Email address</label>
-            <input type="email" name="email" required value="test@test.com">
+            <input type="email" name="email" required>
             <label for="password">password</label>
-            <input type="password" name="password" min="8" required value="Abc1234!">
+            <input type="password" name="password" min="8" required>
             <button type="submit">Submit</button>
         </form>
     </section>
@@ -24,12 +28,21 @@
             <input type="text" name="name" required>
             <label for="email">Email address</label>
             <input type="email" name="email" required>
-            <label for="password">password</label>
-            <input type="password" name="password" minlength="8" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" minlength="8" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                required>
             <label for="passwordRepeat">Repeat password</label>
-            <input type="password" name="passwordRepeat" minlength="8" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <input type="password" name="passwordRepeat" minlength="8"
+                pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                required>
             <button type="submit">Submit</button>
         </form>
 
     </section>
 </main>
+
+<footer style="text-align: center;">
+    <p> &copy; Copyright 2022 </p>
+</footer>
