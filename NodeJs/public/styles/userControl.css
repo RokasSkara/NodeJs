@@ -1,0 +1,8 @@
+.hidden{
+    display: none;
+}
+
+.toggler{
+    display: flex;
+    justify-content: flex-end;
+}

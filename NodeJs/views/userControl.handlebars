@@ -1,0 +1,40 @@
+<header>
+    <div></div>
+    <div>
+        <a href="/">Home</a>
+
+    </div>
+</header>
+
+<main>
+    <div class="toggler">
+        <button id="toggler">Click here to register</button>
+    </div>
+
+    <section id="Login">
+        <h1>Login</h1>
+
+        <form action="/login" method="POST">
+            <label for="email">Email address</label>
+            <input type="email" name="email" required>
+            <label for="password">password</label>
+            <input type="password" name="password" min="8" required>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section id="Register" class="hidden">
+        <h1>Registration</h1>
+
+        <form action="/register" method="POST">
+            <label for="email">Email address</label>
+            <input type="email" name="email" required>
+            <label for="password">password</label>
+            <input type="password" name="password" min="8" required>
+            <label for="passwordRepeat">Repeat password</label>
+            <input type="password" name="passwordRepeat" min="8" required>
+            <button type="submit">Submit</button>
+        </form>
+
+
+    </section>
+</main>

@@ -6,6 +6,7 @@ import { engine } from 'express-handlebars';
 import path from 'path';
 //Routes
 import homepage from './routes/ui/homepage.js'
+import userControl from './routes/ui/userControl.js'
 //
 
 
@@ -27,5 +28,6 @@ app.use(express.json(), express.urlencoded({extended: false}), cors(options), co
 
 
 app.use('/', homepage)
+app.use('/accessPage', userControl)
 
 app.listen(PORT, () => console.log(`Server live on port ${PORT}`));
