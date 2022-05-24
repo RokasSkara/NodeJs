@@ -7,7 +7,7 @@
         <h4>Blogs by: <span>{{user}}</span></h4>
         <ul>
             <a href="/">Home</a>
-            <a href="/userManagement/logout">Logout</a>
+            <a href="/userManagement/logout" onclick="return confirm('Are you sure?')">Logout</a>
         </ul>
     </div>
 </header>
@@ -22,6 +22,9 @@
 </section>
 
 <main>
+    {{#if empty}}
+    <h1>{{empty}}</h1>
+    {{/if}}
     {{#each data}}
     <div class="Blog">
         <div class="InnerBlog">
@@ -29,7 +32,9 @@
             <p>{{this.content}}</p>
         </div>
         <div class="InnerBlogDelete">
-            <button {{this.id}}>Delete</button>
+            <form action="user/delete">
+                <button name="blogID" value="{{this.id}}" onclick="return confirm('Are you sure?')">Delete</button>
+            </form>
         </div>
     </div>
     {{/each}}

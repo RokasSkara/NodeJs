@@ -6,3 +6,4 @@ document.querySelector('#BlogAddToggler').addEventListener('click', () => {
     addBlog.classList.toggle('hidden')
     textToggler.textContent === 'Add Blog' ? textToggler.textContent = 'Hide Blog form' : textToggler.textContent = 'Add Blog' 
 })
+

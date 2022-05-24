@@ -10,6 +10,10 @@ router.get('/', async (req, res) => {
             SELECT *
             FROM blog
          `)
+        //in case its empty 
+        let empty = 'No blogs yet - Login and click on My Blogs to create one!'
+        data.length > 0? empty = false : '';
+        
         if (Auth(req, res)) {
             res.status(200).render('home', {
                 script: 'home.js',
@@ -17,6 +21,7 @@ router.get('/', async (req, res) => {
                 data: data,
                 Auth: true,
                 user: req.cookies.token.split(' ')[3],
+                empty: empty,
             })
         } else {
             res.status(200).render('home', {
@@ -24,6 +29,7 @@ router.get('/', async (req, res) => {
                 css: 'home.css',
                 data: data,
                 Auth: false,
+                empty: empty
             })
         }
     } catch (err) {

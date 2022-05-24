@@ -1,9 +1,6 @@
 <header>
     <div>
         <h1>Homepage</h1>
-        {{#unless Auth}}
-        <a href="/userManagement">Login</a>
-        {{/unless}}
     </div>
     <div>
         {{#if Auth}}
@@ -13,12 +10,18 @@
             <a href="/userManagement/logout">Logout</a>
         </ul>
         {{/if}}
+        {{#unless Auth}}
+        <a href="/userManagement">Login</a>
+        {{/unless}}
     </div>
 </header>
 
 <main>
+    {{#if empty}}
+        <h1>{{empty}}</h1>
+    {{/if}}
     {{#each data}}
-        <div class="Blog">
+    <div class="Blog">
         <h4>{{this.title}}</h4>
         <p>{{this.content}}</p>
     </div>

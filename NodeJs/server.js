@@ -9,7 +9,6 @@ import homepage from './routes/ui/homepage.js'
 import userControl from './routes/ui/userControl.js'
 import user from './routes/ui/user.js'
 import API from './routes/api/api.js'
-//
 
 const app = express()
 const PORT = process.env.UserPort || 3000

@@ -11,6 +11,7 @@ const router = express.Router();
 
 //registration
 router.post('/', async (req, res) => {
+    //Verifying login data using login schema
     const loginData = req.body
     try {
         await LogValidation(loginData)
@@ -20,6 +21,7 @@ router.post('/', async (req, res) => {
     }
 
     try {
+        //checking if use with such email exists
         const [data] = await con.query(`
         SELECT *
         FROM user
@@ -28,7 +30,9 @@ router.post('/', async (req, res) => {
         if (data.length === 0) {
             return res.status(400).send({ err: 'Incorrect email or password' })
         }
+        //verifying password
         const Auth = await bcrypt.compare(loginData.password, data[0].password)
+        //If verification passes create JWT token and insert it to cookies
         if (Auth) {
             const privateKey = process.env.SECRET
             const token = jwt.sign({
