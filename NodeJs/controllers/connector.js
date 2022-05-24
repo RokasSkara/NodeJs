@@ -1,3 +1,7 @@
+/*
+  JS used to initiate connection to mysql server with info taken from .env file.
+*/
+
 import 'dotenv/config';
 import mysql from 'mysql2/promise';
 
