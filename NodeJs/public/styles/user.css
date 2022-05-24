@@ -6,9 +6,16 @@ header{
     border-radius: 10%;
 }
 
+#BlogAddToggler{
+    background-color: rgb(175, 172, 172);
+}
 
 header span{
     color: green;
+}
+
+.hidden{
+    display: none;
 }
 
 header ul{

@@ -1,1 +1,31 @@
-<h1>Users</h1>
+<header>
+    <div>
+        <h1>My Blogs</h1>
+        <button id="BlogAddToggler">Add Blog</button>
+    </div>
+    <div>
+        <h4>Blogs by: <span>{{user}}</span></h4>
+        <ul>
+            <a href="/">Home</a>
+            <a href="/userManagement/logout">Logout</a>
+        </ul>
+    </div>
+</header>
+<section id="BlogAdd" class="hidden">
+    <form action="/user" method="POST">
+        <label for="title">Blog title</label>
+        <input type="text" name="title" required>
+        <label for="content">Blog Content</label>
+        <textarea name="content" required> </textarea>
+        <button>Submit</button>
+    </form>
+</section>
+
+<main>
+
+
+</main>
+
+<footer>
+    
+</footer>

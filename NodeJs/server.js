@@ -7,7 +7,7 @@ import path from 'path';
 //Routes
 import homepage from './routes/ui/homepage.js'
 import userControl from './routes/ui/userControl.js'
-import user from './routes/ui/users.js'
+import user from './routes/ui/user.js'
 //
 
 

@@ -32,14 +32,14 @@ let isAuth = (req, res, next) => {
         const token = req.cookies.token?.split(' ')[0]
         jwt.verify(token, privateKey, (err, decoded) => {
             if (err) {
-                return res.status(400).send({ err: 'You aint belong here' })
+                return res.status(400).send({ err: 'Incorrect or expired token - please login a gain' })
             } else {
                 refreshToken(req.cookies.token, res)
                 return next();
             }
         })
     } catch (err) {
-        return res.status(400).send({ err: 'You aint belong here' })
+        return res.status(400).send({ err: 'Incorrect or expired token - please log in a gain' })
     }
 }
 
