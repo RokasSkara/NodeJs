@@ -1,5 +1,5 @@
 /*
-JS used to toggle between registration and login forms
+JS used to toggle between registration and login forms + change the toggler textContent in userControl.handlebars view
 */
 
 document.querySelector('#toggler').addEventListener('click', () => {
