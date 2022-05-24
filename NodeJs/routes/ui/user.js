@@ -20,7 +20,7 @@ router.get('/', isAuth, async (req, res) => {
             user: user
         })
     } catch (err) {
-        console.log(err)
+        res.status(500).send({ error: `Error:` + err })
     }
 })
 

@@ -8,6 +8,7 @@ import path from 'path';
 import homepage from './routes/ui/homepage.js'
 import userControl from './routes/ui/userControl.js'
 import user from './routes/ui/user.js'
+import API from './routes/api/api.js'
 //
 
 
@@ -34,7 +35,7 @@ app.use('/userManagement', userControl)
 app.use('/user', user)
 
 //API part
-/* app.use('/api', API) */
+app.use('/api', API)
 
 app.listen(PORT, () => console.log(`Server live on port ${PORT}`));
 
