@@ -43,7 +43,7 @@ const validateReg = ajv.compile(RegSchema)
 let RegValidation = (data) => {
     const valid = validateReg(data)
     const PassCompare = data.password === data.passwordRepeat
-    console.log('valid', valid, 'compare =', PassCompare)
+    console.log('valid data', valid, 'compare pw =', PassCompare)
     return (valid && PassCompare)
 }
 // Login Function

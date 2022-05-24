@@ -1,3 +1,17 @@
-<h1>home</h1>
-
-<a href="/accesspage">Login</a>
+<header>
+    <div>
+        <h1>Homepage</h1>
+        {{#unless Auth}}
+        <a href="/userManagement">Login</a>
+        {{/unless}}
+    </div>
+    <div>
+        {{#if Auth}}
+        <h4>Welcome <span>{{user}}</span></h4>
+        <ul>
+            <a href="/user">My Page</a>
+            <a href="/userManagement/logout">Logout</a>
+        </ul>
+        {{/if}}
+    </div>
+</header>

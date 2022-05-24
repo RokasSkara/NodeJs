@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(175, 172, 172);
+    padding: 0.5em;
+    border-radius: 10%;
+
+}
+
+header span{
+    color: green;
+}
+
+header ul{
+    display: flex;
+    flex-direction: column;
+}

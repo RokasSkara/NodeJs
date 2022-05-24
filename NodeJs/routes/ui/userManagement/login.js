@@ -2,7 +2,7 @@ import express from 'express'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
-//file imports
+//local imports
 import con from '../../../controllers/connector.js'
 import { LogValidation } from '../../../controllers/dataValidation.js'
 import {PORT} from '../../../server.js'

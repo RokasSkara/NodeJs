@@ -7,7 +7,7 @@ import path from 'path';
 //Routes
 import homepage from './routes/ui/homepage.js'
 import userControl from './routes/ui/userControl.js'
-
+import user from './routes/ui/users.js'
 //
 
 
@@ -28,8 +28,13 @@ app.set('views', './views');
 app.use(express.json(), express.urlencoded({extended: false}), cors(options), cookieParser(),express.static(path.resolve('public')))
 
 
+//UI part
 app.use('/', homepage)
-app.use('/accesspage', userControl)
+app.use('/userManagement', userControl)
+app.use('/user', user)
+
+//API part
+/* app.use('/api', API) */
 
 app.listen(PORT, () => console.log(`Server live on port ${PORT}`));
 

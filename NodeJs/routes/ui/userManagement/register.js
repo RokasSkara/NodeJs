@@ -1,5 +1,7 @@
 import express from 'express'
 import bcrypt from 'bcrypt'
+
+//local imports
 import con from '../../../controllers/connector.js'
 import RegValidation from '../../../controllers/dataValidation.js'
 import {PORT} from '../../../server.js'
@@ -17,7 +19,7 @@ router.post('/', async(req,res) => {
                 INSERT INTO user (name, email, password, register_time)
                 VALUES (?,?,?,?)
             `, [request.name, request.email, hashedPass, new Date().toLocaleString('LT')])
-            res.redirect(`http://localhost:${PORT}/accesspage`)
+            res.redirect(`http://localhost:${PORT}/userManagement`)
         } catch (err) {
             res.status(500).send({ error: `Error:` + err })
         }
