@@ -7,7 +7,7 @@
         <h4>Welcome <span>{{user}}</span></h4>
         <ul>
             <a href="/user">My Blogs</a>
-            <a href="/userManagement/logout">Logout</a>
+            <a href="/userManagement/logout" onclick="return confirm('Are you sure?')">Logout</a>
         </ul>
         {{/if}}
         {{#unless Auth}}
