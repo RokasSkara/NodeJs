@@ -14,11 +14,12 @@ const ajv = new Ajv()
 const RegSchema = {
     type: "object",
     properties: {
+        name: { type: "string"},
         email: { type: "string", pattern: '[a-z0-9]+@[a-z]+\.[a-z]{2,3}$' },
         password: { type: "string", pattern: '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$' },
         passwordRepeat: { type: "string", pattern: '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$' }
     },
-    required: ["email", "password", "passwordRepeat"],
+    required: ["name","email", "password", "passwordRepeat"],
 }
 
 // 2. Login Schema

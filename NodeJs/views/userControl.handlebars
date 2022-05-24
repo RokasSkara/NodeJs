@@ -14,18 +14,20 @@
     <section id="Login">
         <h1>Login</h1>
 
-        <form action="/login" method="POST">
+        <form action="accesspage/login" method="POST">
             <label for="email">Email address</label>
-            <input type="email" name="email" required>
+            <input type="email" name="email" required value="test@test.com">
             <label for="password">password</label>
-            <input type="password" name="password" min="8" required>
+            <input type="password" name="password" min="8" required value="Abc1234!">
             <button type="submit">Submit</button>
         </form>
     </section>
     <section id="Register" class="hidden">
         <h1>Registration</h1>
 
-        <form action="/register" method="POST">
+        <form action="accesspage/register" method="POST">
+            <label for="name">Name</label>
+            <input type="text" name="name" required>
             <label for="email">Email address</label>
             <input type="email" name="email" required>
             <label for="password">password</label>

@@ -11,7 +11,7 @@ import userControl from './routes/ui/userControl.js'
 
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.UserPort || 3000
 
 // cors options
 const options = {
@@ -28,6 +28,8 @@ app.use(express.json(), express.urlencoded({extended: false}), cors(options), co
 
 
 app.use('/', homepage)
-app.use('/accessPage', userControl)
+app.use('/accesspage', userControl)
 
 app.listen(PORT, () => console.log(`Server live on port ${PORT}`));
+
+export {PORT}
