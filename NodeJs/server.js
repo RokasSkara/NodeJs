@@ -1,19 +1,31 @@
 import express from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
+import 'dotenv/config'
+import { engine } from 'express-handlebars';
+import path from 'path';
+//Routes
+import homepage from './routes/ui/homepage.js'
+//
+
 
 const app = express()
+const PORT = process.env.PORT || 3000
 
+// cors options
 const options = {
-    origin: `http://locahost:3000/`,
+    origin: `http://locahost:${PORT}/`,
     optionsSuccessStatus: 200
 }
 
-app.use(express.json(), express.urlencoded({extended: false}), cors(options), cookieParser())
+// handlebars setup
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set('views', './views');
+
+app.use(express.json(), express.urlencoded({extended: false}), cors(options), cookieParser(),express.static(path.resolve('public')))
 
 
-app.use('/', (req,res) => {
-    res.status(200).send({msg: 'Hello'})
-})
+app.use('/', homepage)
 
-app.listen(3000, () => console.log(`Server live`));
+app.listen(PORT, () => console.log(`Server live on port ${PORT}`));
